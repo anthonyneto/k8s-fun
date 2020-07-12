@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: sealed-secrets
+  name: sealed-secrets-controller
   namespace: sealed-secrets
   annotations:
     fluxcd.io/automated: "true"
