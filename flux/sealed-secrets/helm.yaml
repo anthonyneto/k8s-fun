@@ -13,5 +13,5 @@ spec:
     enable: false
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
-    name: stable/sealed-secrets
+    name: sealed-secrets
     version: 1.10.1
