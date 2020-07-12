@@ -2,12 +2,12 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: sealed-secrets-controller
-  namespace: sealed-secrets
+  namespace: sealed-secrets-controller
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~v0.
 spec:
-  releaseName: sealed-secrets
+  releaseName: sealed-secrets-controller
   helmVersion: v3
   rollback:
     enable: false
