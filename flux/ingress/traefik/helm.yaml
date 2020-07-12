@@ -18,8 +18,11 @@ spec:
   values:
     service:
       spec:
-        loadBalancerIP: 192.168.5.201
+        loadBalancerIP: 192.168.5.200
       annotations:
         # external-dns.alpha.kubernetes.io/hostname: placeholder.example.com
+    ingressRoute:
+      dashboard:
+        enabled: true
     additionalArguments:
       - --serverstransport.insecureskipverify=true
