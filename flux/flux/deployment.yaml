@@ -25,7 +25,10 @@ spec:
         - containerPort: 3032
         env:
         - name: SLACK_URL
-          value: ''
+          valueFrom:
+            secretKeyRef:
+              name: fluxcloud
+              value: slack_url
         - name: SLACK_CHANNEL
           value: '#flux'
         - name: SLACK_USERNAME

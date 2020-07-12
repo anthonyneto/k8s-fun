@@ -1,5 +1,5 @@
 #!/bin/bash
-NAMESPACE='sealed-secrets'
+NAMESPACE='sealed-secrets-controller'
 
 mkdir -p .tmp
 
