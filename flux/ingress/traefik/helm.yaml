@@ -1,0 +1,25 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: ingress
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~v0.
+spec:
+  releaseName: traefik
+  helmVersion: v3
+  rollback:
+    enable: false
+  chart:
+    repository: https://containous.github.io/traefik-helm-chart/
+    name: traefik
+    version: 8.8.1
+  values:
+    service:
+      spec:
+        loadBalancerIP: 192.168.5.201
+      annotations:
+        # external-dns.alpha.kubernetes.io/hostname: placeholder.example.com
+    additionalArguments:
+      - --serverstransport.insecureskipverify=true
