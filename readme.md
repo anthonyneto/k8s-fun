@@ -2,6 +2,7 @@
 
 ### Description
 A place to test out various k8s things deployed with flux.
-Things currently setup:
+
+### Things currently setup:
   - fluxcloud(slack notifications)
   - sealed-secrets
