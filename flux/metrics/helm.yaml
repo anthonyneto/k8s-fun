@@ -1,0 +1,17 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kube-state-metrics
+  namespace: metrics
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~v0.
+spec:
+  releaseName: kube-state-metrics
+  helmVersion: v3
+  rollback:
+    enable: false
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: kube-state-metrics
+    version: 2.8.5
