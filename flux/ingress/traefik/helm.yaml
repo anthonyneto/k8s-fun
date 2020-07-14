@@ -17,9 +17,10 @@ spec:
     version: 8.8.1
   values:
     service:
+      enabled: false
       spec:
-        type: NodePort
-      #   loadBalancerIP: 192.168.5.200
+        # type: NodePort
+        # loadBalancerIP: 192.168.5.200
       annotations:
         # external-dns.alpha.kubernetes.io/hostname: placeholder.example.com
     ingressRoute:
