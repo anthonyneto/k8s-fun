@@ -18,7 +18,7 @@ spec:
   values:
     service:
       spec:
-        type: nodePort
+        type: NodePort
       #   loadBalancerIP: 192.168.5.200
       annotations:
         # external-dns.alpha.kubernetes.io/hostname: placeholder.example.com
