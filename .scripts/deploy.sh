@@ -1,14 +1,5 @@
 #!/bin/bash
-minikube start
-sudo chown -R $USER $HOME/.kube $HOME/.minikube;
-kubectx minikube
-
-kubectl -n kube-system create sa tiller
-kubectl create clusterrolebinding tiller-cluster-rule \
-  --clusterrole=cluster-admin \
-  --serviceaccount=kube-system:tiller
-
-helm init --upgrade --wait --service-account tiller
+kubectl create namespace flux
 
 helm repo add fluxcd https://charts.fluxcd.io
 
@@ -31,8 +22,8 @@ kubectl -n flux rollout restart deployment/flux
 kubectl -n flux rollout status deployment/flux -w
 
 helm upgrade -i helm-operator fluxcd/helm-operator \
-  --set createCRD="true" \
   --set git.ssh.secretName=flux-git-deploy \
+  --set helm.versions=v3 \
   --namespace flux
 
 kubectl -n flux rollout status deployment/helm-operator -w
